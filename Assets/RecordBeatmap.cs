@@ -30,10 +30,8 @@ public class RecordBeatmap : MonoBehaviour {
 	}
 
 	public void ChangeSlider() {
-		if (!isStartedRecord) {
 			timePast = slider.value * audioLength;
 			audioSource.time = timePast;
-		}
 	}
 
 	public void HitButton(int index) {
