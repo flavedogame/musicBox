@@ -12,6 +12,8 @@ public class RecordBeatmap : MonoBehaviour {
 	bool isStartedRecord = false;
 	float audioLength;
 
+	BeatmapEvent beatmap;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -34,8 +36,8 @@ public class RecordBeatmap : MonoBehaviour {
 			audioSource.time = timePast;
 	}
 
-	public void HitButton(int index) {
-		
+	public void HitKey(int index) {
+		RecordKey (index, TouchType.single);
 	}
 
 	public void StartRecord(){
@@ -43,6 +45,7 @@ public class RecordBeatmap : MonoBehaviour {
 		timePast = 0.0f;
 		audioLength = audioSource.clip.length;
 		isStartedRecord = true;
+		beatmap = new BeatmapEvent ();
 	}
 
 	public void PauseRecord(){
@@ -67,5 +70,14 @@ public class RecordBeatmap : MonoBehaviour {
 	public void Forward(){
 		audioSource.time = Mathf.Min ((audioSource.time + 5.0f), audioLength-0.1f);
 		ChangeTime (audioSource.time);
+	}
+
+	public void RecordKey(int key, TouchType touchType){
+		beatmap.beats.Add (new Beat (timePast, key, touchType));
+		Debug.Log (beatmap.beats);
+	}
+
+	public void SaveBeatmap() {
+		JSONFactory.JSONAssembly.SaveBeatmapToJson (beatmap,"quite");
 	}
 }

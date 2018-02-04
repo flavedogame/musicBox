@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BeatmapEvent{
-	public List<Beatmap> dialogues;
+	public List<Beat> beats;
+	public BeatmapEvent(){
+		beats = new List<Beat> ();
+	}
 
 }
 
@@ -15,9 +18,14 @@ public enum AttributeType{
 	deep,pure,passion,fun,think
 }
 
-public struct Beatmap{
+public struct Beat{
 	public float time;
-	public AttributeType attr;
 	public TouchType touch;
 	public int key;
+
+	public Beat(float t, int k, TouchType tou) {
+		time = t;
+		key = k;
+		touch = tou;
+	}
 }
