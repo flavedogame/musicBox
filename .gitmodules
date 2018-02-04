@@ -1,0 +1,3 @@
+[submodule "Assets/External/Utility"]
+	path = Assets/External/Utility
+	url = https://github.com/flavedogame/unityUtility.git
