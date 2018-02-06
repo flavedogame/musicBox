@@ -78,6 +78,6 @@ public class RecordBeatmap : MonoBehaviour {
 	}
 
 	public void SaveBeatmap() {
-		JSONFactory.JSONAssembly.SaveBeatmapToJson (beatmap,"quite");
+		JSONFactory.JSONAssembly.SaveBeatmapToJson (beatmap,"quiet");
 	}
 }

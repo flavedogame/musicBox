@@ -15,6 +15,7 @@ sysinfo.txt
 *.unitypackage
 *.meta
 /*.meta
+raw Image/
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
