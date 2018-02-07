@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicGameLogic : MonoBehaviour {
 
@@ -20,11 +21,16 @@ public class MusicGameLogic : MonoBehaviour {
 	public float goodSeconds = 0.5f;
 	public float badSeconds = 1.0f;
 
+	public RectTransform originRect;
+	public RectTransform[] targetRects;
+
+	public GameObject padPrefab;
+
 	BeatmapEvent beatmap;
 
 	// Use this for initialization
 	void Start () {
-		StartRecord ();
+		StartPlay ();
 	}
 
 	// Update is called once per frame
@@ -48,9 +54,15 @@ public class MusicGameLogic : MonoBehaviour {
 				beatmap.beats.RemoveAt (0);
 				tapBeats [beat.key].Add (beat);
 				Debug.Log ("show pads");
-				Debug.Log (beatmap.beats);
+				ShowPads (beat);
 			}
 		}
+	}
+
+	void ShowPads(Beat beat){
+		GameObject go = Instantiate (padPrefab) as GameObject;
+		go.transform.parent = transform;
+		go.GetComponent<DropingBeat>().Setup(originRect, targetRects [beat.key]);
 	}
 
 	void ChangeTime(float value) {
@@ -61,7 +73,7 @@ public class MusicGameLogic : MonoBehaviour {
 		RecordKey (index, TouchType.single);
 	}
 
-	public void StartRecord(){
+	public void StartPlay(){
 		audioSource.Play ();
 		timePast = 0.0f;
 		audioLength = audioSource.clip.length;
