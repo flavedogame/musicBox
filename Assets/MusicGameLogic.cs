@@ -16,10 +16,15 @@ public class MusicGameLogic : MonoBehaviour {
 
 	public float showPadsBeforeSeconds = 2;
 	public float missSeconds = 0.5f;
+	public float perfectMissSeconds = 0.05f;
+	public float greatMissSeconds = 0.15f;
+	public float goodMissSeconds = 0.25f;
 	public float perfectSeconds = 0.1f;
 	public float greatSeconds = 0.3f;
 	public float goodSeconds = 0.5f;
 	public float badSeconds = 1.0f;
+
+	public Text timeText;
 
 	public RectTransform originRect;
 	public RectTransform[] targetRects;
@@ -67,6 +72,7 @@ public class MusicGameLogic : MonoBehaviour {
 
 	void ChangeTime(float value) {
 		timePast = value;
+		timeText.text = timePast.ToString();
 	}
 
 	public void HitKey(int index){
@@ -101,8 +107,25 @@ public class MusicGameLogic : MonoBehaviour {
 	}
 
 	public void RecordKey(int key, TouchType touchType){
-		beatmap.beats.Add (new Beat (timePast, key, touchType));
-		Debug.Log (beatmap.beats);
+		if (tapBeats [key].Count >= 1) {
+			Beat beat = tapBeats [key] [0];
+			if (beat.time >= timePast + badSeconds) {
+				//ignore
+			} else if (beat.time >= timePast + goodSeconds) {
+				Debug.Log ("bad!"+beat.time+" "+timePast);
+			} else if (beat.time >= timePast + greatSeconds) {
+				Debug.Log ("good!"+beat.time+" "+timePast);
+			} else if (beat.time >= timePast + perfectSeconds) {
+				Debug.Log ("great!"+beat.time+" "+timePast);
+			} else if (beat.time >= timePast - perfectMissSeconds) {
+				Debug.Log ("perfect!"+beat.time+" "+timePast);
+			} else if (beat.time >= timePast - greatMissSeconds) {
+				Debug.Log ("great!"+beat.time+" "+timePast);
+			} else if (beat.time >= timePast - goodMissSeconds) {
+				Debug.Log ("good!"+beat.time+" "+timePast);
+			}
+			tapBeats [key].RemoveAt (0);
+		}
 	}
 
 //	public void SaveBeatmap() {
