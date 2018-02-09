@@ -36,6 +36,11 @@ public class MusicGameLogic : MonoBehaviour {
 	public RectTransform beatRect;
 	public GameObject beatResultPrefab;
 
+	public AudioSource soundEffectSource;
+	public AudioClip tapPadSoundEffect;
+
+	public MusicGameScoreCalculator calculator;
+
 	BeatmapEvent beatmap;
 
 
@@ -79,6 +84,7 @@ public class MusicGameLogic : MonoBehaviour {
 
 
 	void ShowBeatResult(BeatResultType result) {
+		calculator.GetBeatResult (result);
 		GameObject go = Instantiate (beatResultPrefab) as GameObject;
 		go.transform.parent = transform;
 		go.GetComponent<BeatResult>().Setup(result,beatRect);
@@ -121,6 +127,7 @@ public class MusicGameLogic : MonoBehaviour {
 	}
 
 	public void RecordKey(int key, TouchType touchType){
+		soundEffectSource.Play ();
 		if (tapBeats [key].Count >= 1) {
 			Beat beat = tapBeats [key] [0];
 			if (beat.time >= timePast + badSeconds) {
