@@ -41,7 +41,10 @@ public class MusicGameLogic : MonoBehaviour {
 
 	public MusicGameScoreCalculator calculator;
 
+	public Text comboText;
+
 	BeatmapEvent beatmap;
+	public Slider resultProgress;
 
 
 	// Use this for initialization
@@ -163,6 +166,15 @@ public class MusicGameLogic : MonoBehaviour {
 			} 
 			tapBeats [key].RemoveAt (0);
 		}
+	}
+
+	public void updateComboText(int combo) {
+		comboText.enabled = (combo != 0);
+		comboText.text = combo.ToString ();
+	}
+
+	public void UpdatePregressSlide(float slideValue){
+		resultProgress.value = slideValue;
 	}
 
 //	public void SaveBeatmap() {

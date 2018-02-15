@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MusicGameScoreCalculator : MonoBehaviour {
-	public Slider resultProgress;
 	public MusicGameMusic songInfo;
+	public MusicGameLogic gameLogic;
+
+	public int[] countByBeatResult;
+	[HideInInspector]
+	public int comboCount;
+	public int maxComboCount;
+
 	float score;
 
 	// Use this for initialization
 	void Start () {
 		songInfo = GetComponent<MusicGameMusic> ();
+		countByBeatResult = new int[6];
 	}
 	
 	// Update is called once per frame
@@ -20,10 +26,12 @@ public class MusicGameScoreCalculator : MonoBehaviour {
 
 	public void GetBeatResult(BeatResultType beatResult){
 		float baseScore = 0;
+		comboCount += 1;
 		switch (beatResult) {
 		case BeatResultType.Bad:
 		case BeatResultType.Miss:
 			baseScore = 0;
+			comboCount = 0;
 			break;
 		case BeatResultType.Good:
 			baseScore = 0.5f;
@@ -38,13 +46,17 @@ public class MusicGameScoreCalculator : MonoBehaviour {
 			baseScore = 2f;
 			break;
 		}
+		maxComboCount = Mathf.Max (comboCount, maxComboCount);
+		countByBeatResult [(int)beatResult]++;
 		score += baseScore*5;
-		UpdateResultProgress ();
+
+		UpdateGameLogic ();
 	}
 
-	public void UpdateResultProgress(){
+	public void UpdateGameLogic(){
+		gameLogic.updateComboText (comboCount);
+
 		int[] scores = songInfo.GetScores();
-		resultProgress.value = score / (float)scores [3];
+		gameLogic.UpdatePregressSlide(score / (float)scores [3]);
 	}
-
 }
