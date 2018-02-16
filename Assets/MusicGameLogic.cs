@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BeatResultType  {JustPerfect,Perfect,Great,Good,Bad,Miss};
 public class MusicGameLogic : MonoBehaviour {
@@ -175,6 +176,10 @@ public class MusicGameLogic : MonoBehaviour {
 
 	public void UpdatePregressSlide(float slideValue){
 		resultProgress.value = slideValue;
+	}
+
+	public void skipGame(){
+		SceneManager.LoadScene ("music game result");
 	}
 
 //	public void SaveBeatmap() {

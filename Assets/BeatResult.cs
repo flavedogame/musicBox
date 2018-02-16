@@ -15,7 +15,7 @@ public class BeatResult : MonoBehaviour {
 	void Update () {
 	}
 
-	public string resultNameByBeatResultType(BeatResultType type){
+	static public string resultNameByBeatResultType(BeatResultType type){
 		switch (type) {
 		case BeatResultType.JustPerfect:
 			return "嚯厉害厉害";
@@ -28,7 +28,7 @@ public class BeatResult : MonoBehaviour {
 		case BeatResultType.Bad:
 			return "哎呦喂早了";
 		case BeatResultType.Miss:
-			return "哎呦喂过去了";
+			return "哎呦喂过了";
 		}
 		return "???";
 	}

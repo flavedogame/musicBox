@@ -15,8 +15,9 @@ public class MusicGameScoreCalculator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		DontDestroyOnLoad (gameObject);
 		songInfo = GetComponent<MusicGameMusic> ();
-		countByBeatResult = new int[6];
+		//countByBeatResult = new int[6];
 	}
 	
 	// Update is called once per frame

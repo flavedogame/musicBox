@@ -703,6 +703,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203152934}
+--- !u!1 &234909171 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1563167077125592, guid: d7f8935ce17ad8349823ed4f5cf95cb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 39457921}
 --- !u!1 &368085135
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +924,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 441894191}
+--- !u!1 &507432623 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1563167077125592, guid: d7f8935ce17ad8349823ed4f5cf95cb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1105717745}
 --- !u!224 &507432624 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224590132128947136, guid: d7f8935ce17ad8349823ed4f5cf95cb3,
@@ -1060,6 +1070,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 649658284}
+--- !u!1 &652472240 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1563167077125592, guid: d7f8935ce17ad8349823ed4f5cf95cb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 748493386}
 --- !u!1 &665158589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,6 +1258,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224590132128947136, guid: d7f8935ce17ad8349823ed4f5cf95cb3,
     type: 2}
   m_PrefabInternal: {fileID: 748493386}
+--- !u!1 &767351400 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1563167077125592, guid: d7f8935ce17ad8349823ed4f5cf95cb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 80324048}
 --- !u!1 &830971835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1337,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 830971835}
+--- !u!1 &835568632 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1563167077125592, guid: d7f8935ce17ad8349823ed4f5cf95cb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2118070735}
 --- !u!1 &867440093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1082928707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,7 +1848,13 @@ MonoBehaviour:
   newBestText: {fileID: 649658286}
   finalScoreText: {fileID: 368085137}
   maxComboText: {fileID: 1280618284}
-  countTextByBeat: []
+  countTextByBeat:
+  - {fileID: 507432623}
+  - {fileID: 767351400}
+  - {fileID: 1491070185}
+  - {fileID: 652472240}
+  - {fileID: 234909171}
+  - {fileID: 835568632}
   scoreCalculator: {fileID: 1082928707}
 --- !u!1 &1280618282
 GameObject:
@@ -1934,6 +1965,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1491070185 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1563167077125592, guid: d7f8935ce17ad8349823ed4f5cf95cb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 99417164}
 --- !u!1 &1558300991
 GameObject:
   m_ObjectHideFlags: 0
