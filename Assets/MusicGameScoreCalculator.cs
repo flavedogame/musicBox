@@ -11,7 +11,7 @@ public class MusicGameScoreCalculator : MonoBehaviour {
 	public int comboCount;
 	public int maxComboCount;
 
-	float score;
+	public float score;
 
 	// Use this for initialization
 	void Start () {
