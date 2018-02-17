@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicGameMusic : MonoBehaviour {
+public class MusicGameSongManager : MonoBehaviour {
+
+	public TextAsset songInfosText;
+	List<SongInfo> songs;
 
 	// Use this for initialization
 	void Start () {
-		
+		songs = SongInfo.loadSongInfo (songInfosText);
+		Debug.Log (songs [0].name);
+		Debug.Log (songs [0].description);
 	}
 	
 	// Update is called once per frame

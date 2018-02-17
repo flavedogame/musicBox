@@ -1,3 +1,6 @@
 [submodule "Assets/External/Utility"]
 	path = Assets/External/Utility
 	url = https://github.com/flavedogame/unityUtility.git
+[submodule "Assets/External/UnityCsvUtil"]
+	path = Assets/External/UnityCsvUtil
+	url = https://github.com/flavedogame/UnityCsvUtil.git

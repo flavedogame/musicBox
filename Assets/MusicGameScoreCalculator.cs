@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicGameScoreCalculator : MonoBehaviour {
-	public MusicGameMusic songInfo;
+	public MusicGameSongManager songManager;
 	public MusicGameLogic gameLogic;
 
 	public int[] countByBeatResult;
@@ -16,7 +16,7 @@ public class MusicGameScoreCalculator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (gameObject);
-		songInfo = GetComponent<MusicGameMusic> ();
+		songManager = GetComponent<MusicGameSongManager> ();
 		//countByBeatResult = new int[6];
 	}
 	
@@ -57,7 +57,7 @@ public class MusicGameScoreCalculator : MonoBehaviour {
 	public void UpdateGameLogic(){
 		gameLogic.updateComboText (comboCount);
 
-		int[] scores = songInfo.GetScores();
+		int[] scores = songManager.GetScores();
 		gameLogic.UpdatePregressSlide(score / (float)scores [3]);
 	}
 }
