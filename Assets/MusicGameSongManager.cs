@@ -6,13 +6,13 @@ public class MusicGameSongManager : MonoBehaviour {
 
 	public TextAsset songInfosText;
 	List<SongInfo> songs;
+	public SongPickingViewController pickingView;
 
 	// Use this for initialization
 	void Start () {
 		//songs = SongInfo.loadSongInfo (songInfosText);
 		songs = SongInfo.loadSongInfo("Assets/Resources/songCsv.csv");
-		Debug.Log (songs [0].name);
-		Debug.Log (songs [0].description);
+		SelectSong (0);
 	}
 	
 	// Update is called once per frame
@@ -20,6 +20,13 @@ public class MusicGameSongManager : MonoBehaviour {
 		
 	}
 
+	public void SelectSong(int index) {
+		if (index >= songs.Count) {
+			Debug.LogError ("index larger than song's count");
+			return;
+		}
+		pickingView.SelectSong (songs [index]);
+	}
 
 	public int[] GetScores() {
 		//good,great,perfect,justPerfect

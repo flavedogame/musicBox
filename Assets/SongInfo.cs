@@ -15,6 +15,23 @@ public class SongInfo : MonoBehaviour {
 		public int greatScore;
 		public int perfectScore;
 		public int justPerfectScore;
+	public int difficulty;
+	//public float songSampleStartTime;
+	//public float songSampleEndTime;
+
+	public Sprite image() {
+		string path = "songBG/" + identifier;
+		Sprite sprite = Resources.Load<Sprite> (path);//format to be decided
+		Debug.Log(sprite);
+		if (sprite == null) {
+			Debug.LogError ("sprite not exist for path: "+path);
+		}
+		return sprite;
+	}
+
+	public string Description() {
+		return "\"" + description + "\"";
+	}
 
 	static public List<SongInfo> loadSongInfo(TextAsset songInfos) {
 		List<SongInfo> objs;

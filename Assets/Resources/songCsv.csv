@@ -1,3 +1,3 @@
-﻿identifier,name,description,okScore,greatScore,perfectScore,justPerfectScore
-quite,静止,有一段时间同学们特忙，没人找我玩来，我觉得特没劲，电视看的我眼睛直近视，那时侯每天看电视到夜里两点半，除了睡觉每天脑袋特晕，没劲，就这意思,99,199,299,399
-afterSchool,放学了,我们现在十几岁，写的都是我们熟悉的事情，身边发生的事儿,100,200,300,400
+﻿identifier,name,description,okScore,greatScore,perfectScore,justPerfectScore,difficulty
+quiet,静止,有一段时间同学们特忙，没人找我玩来，我觉得特没劲，电视看的我眼睛直近视，那时侯每天看电视到夜里两点半，除了睡觉每天脑袋特晕，没劲，就这意思,99,199,299,399,5
+afterSchool,放学了,我们现在十几岁，写的都是我们熟悉的事情，身边发生的事儿,100,200,300,400,6
