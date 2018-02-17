@@ -9,7 +9,8 @@ public class MusicGameSongManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		songs = SongInfo.loadSongInfo (songInfosText);
+		//songs = SongInfo.loadSongInfo (songInfosText);
+		songs = SongInfo.loadSongInfo("Assets/Resources/songCsv.csv");
 		Debug.Log (songs [0].name);
 		Debug.Log (songs [0].description);
 	}

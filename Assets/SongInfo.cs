@@ -19,10 +19,14 @@ public class SongInfo : MonoBehaviour {
 	static public List<SongInfo> loadSongInfo(TextAsset songInfos) {
 		List<SongInfo> objs;
 		using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(songInfos.text))) {
-			using (var sr = new StreamReader(ms)) {
+			using (var sr = new StreamReader(ms,System.Text.Encoding.UTF8)) {
 				objs = CsvUtil.LoadObjects<SongInfo>(sr);
 			}
 		}
 		return objs;
+	}
+
+	static public List<SongInfo> loadSongInfo(string songInfosName) {
+		return CsvUtil.LoadObjects<SongInfo> (songInfosName);
 	}
 }
