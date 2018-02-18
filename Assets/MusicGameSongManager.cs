@@ -11,6 +11,7 @@ public class MusicGameSongManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//songs = SongInfo.loadSongInfo (songInfosText);
+		//should select the song player owns
 		songs = SongInfo.loadSongInfo("Assets/Resources/songCsv.csv");
 		SelectSong (0);
 	}
