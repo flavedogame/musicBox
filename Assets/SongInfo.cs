@@ -22,7 +22,7 @@ public class SongInfo : MonoBehaviour {
 	public Sprite image() {
 		string path = "songBG/" + identifier;
 		Sprite sprite = Resources.Load<Sprite> (path);//format to be decided
-		Debug.Log(sprite);
+		//Debug.Log(sprite);
 		if (sprite == null) {
 			Debug.LogError ("sprite not exist for path: "+path);
 		}

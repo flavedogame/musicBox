@@ -5,7 +5,8 @@ using UnityEngine;
 public class MusicGameSongManager : MonoBehaviour {
 
 	public TextAsset songInfosText;
-	List<SongInfo> songs;
+	[HideInInspector]
+	public List<SongInfo> songs;
 	public SongPickingViewController pickingView;
 
 	// Use this for initialization
