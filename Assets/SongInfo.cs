@@ -29,6 +29,25 @@ public class SongInfo : MonoBehaviour {
 		return sprite;
 	}
 
+	public Sprite icon() {
+		string path = "songBG/" + identifier+"_i";
+		Sprite sprite = Resources.Load<Sprite> (path);//format to be decided
+		//Debug.Log(sprite);
+		if (sprite == null) {
+			Debug.LogError ("sprite not exist for path: "+path);
+		}
+		return sprite;
+	}
+
+	public AudioClip audioClip(){
+		string path = "music/" + identifier;
+		AudioClip clip = Resources.Load<AudioClip> (path);
+		if (clip == null) {
+			Debug.LogError ("clip not exist for path: " + path);
+		}
+		return clip;
+	}
+
 	public string Description() {
 		return "\"" + description + "\"";
 	}

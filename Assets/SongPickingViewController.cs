@@ -10,6 +10,7 @@ public class SongPickingViewController : MonoBehaviour {
 	public Text songDescription;
 	public Text difficulty;
 	public Text highestScore;
+	public AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
 		
@@ -25,5 +26,7 @@ public class SongPickingViewController : MonoBehaviour {
 		songName.text = songInfo.name;
 		songDescription.text = songInfo.Description();
 		difficulty.text = songInfo.difficulty.ToString();
+		audioSource.clip = songInfo.audioClip ();
+		audioSource.Play ();
 	}
 }

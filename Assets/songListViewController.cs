@@ -19,7 +19,7 @@ public class songListViewController : MonoBehaviour {
 			songBox.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (0, 0, 0);
 
 			SongBox songBoxScript = songBox.GetComponent<SongBox> ();
-			songBoxScript.SetupBox (songInfo.name, songInfo.image ());
+			songBoxScript.SetupBox (songInfo);
 
 			ListBox listBoxScript = songBox.GetComponent<ListBox> ();
 			if (lastBoxScript != null) {

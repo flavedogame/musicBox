@@ -9,6 +9,7 @@ public class MusicGameSongManager : MonoBehaviour {
 	public List<SongInfo> songs;
 	public SongPickingViewController pickingView;
 
+
 	// Use this for initialization
 	void Start () {
 		//songs = SongInfo.loadSongInfo (songInfosText);

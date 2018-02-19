@@ -13,11 +13,11 @@ public class SongBox : MonoBehaviour {
 		
 	}
 	// Use this for initialization
-	public void SetupBox(string name,Sprite sprite) {
+	public void SetupBox(SongInfo songInfo) {
 		songName = GetComponentInChildren<Text> ();
 		songImage = GetComponent<Image> ();
-		songName.text = name;
-		songImage.sprite = sprite;
+		songName.text = songInfo.name;
+		songImage.sprite = songInfo.icon();
 	}
 	
 	// Update is called once per frame
