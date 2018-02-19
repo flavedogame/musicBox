@@ -7,6 +7,8 @@ public class SongBox : MonoBehaviour {
 
 	Text songName;
 	Image songImage;
+	ListBox listBox;
+
 
 
 	void Start(){
@@ -16,8 +18,13 @@ public class SongBox : MonoBehaviour {
 	public void SetupBox(SongInfo songInfo) {
 		songName = GetComponentInChildren<Text> ();
 		songImage = GetComponent<Image> ();
+		listBox = GetComponent<ListBox> ();
 		songName.text = songInfo.name;
 		songImage.sprite = songInfo.icon();
+	}
+
+	public void didClick(){
+		MusicGameSongManager.Instance.SelectSong (listBox.listBoxID);
 	}
 	
 	// Update is called once per frame

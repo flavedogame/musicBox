@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicGameSongManager : MonoBehaviour {
+public class MusicGameSongManager : Singleton<MusicGameSongManager> {
 
 	public TextAsset songInfosText;
 	[HideInInspector]

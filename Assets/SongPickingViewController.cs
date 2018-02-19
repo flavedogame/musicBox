@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SongPickingViewController : MonoBehaviour {
 	//song info
@@ -28,5 +29,9 @@ public class SongPickingViewController : MonoBehaviour {
 		difficulty.text = songInfo.difficulty.ToString();
 		audioSource.clip = songInfo.audioClip ();
 		audioSource.Play ();
+	}
+
+	public void DecideSong() {
+		SceneManager.LoadScene ("music game");
 	}
 }
