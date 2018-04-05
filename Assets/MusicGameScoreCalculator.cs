@@ -57,7 +57,7 @@ public class MusicGameScoreCalculator : MonoBehaviour {
 	public void UpdateGameLogic(){
 		gameLogic.updateComboText (comboCount);
 
-		int[] scores = songManager.GetScores();
+		int[] scores = MusicGameSongManager.Instance.GetScores();
 		gameLogic.UpdatePregressSlide(score / (float)scores [3]);
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using NUnit.Framework;
 using System.IO;
@@ -15,7 +16,23 @@ public class SongInfo : MonoBehaviour {
 		public int greatScore;
 		public int perfectScore;
 		public int justPerfectScore;
+	public int deep;
+	public int pure;
+	public int passion;
+	public int funny;
+	public int think;
+
+	public string keyWords;
+
+	public string okPrize;
+	public string greatPrize;
+	public string perfectPrize;
+	public string justPerfectPrize;
+
+
 	public int difficulty;
+
+	public string special;
 	//public float songSampleStartTime;
 	//public float songSampleEndTime;
 
@@ -50,6 +67,25 @@ public class SongInfo : MonoBehaviour {
 
 	public string Description() {
 		return "\"" + description + "\"";
+	}
+
+	public enum BasicAttribute {deep,pure,passion,funny,think};
+
+	public string basicAttribute() {
+		Dictionary<BasicAttribute,int> basicMap = new Dictionary<BasicAttribute, int> ();
+		basicMap [BasicAttribute.deep] = deep;
+		basicMap [BasicAttribute.pure] = pure;
+		basicMap [BasicAttribute.passion] = passion;
+		basicMap [BasicAttribute.funny] = funny;
+		basicMap [BasicAttribute.think] = think;
+		var newDict = basicMap.OrderByDescending(x => x.Value);
+		string result = "";
+		foreach (KeyValuePair<BasicAttribute, int> kvp in newDict) {
+			Debug.Log ("key " + kvp.Key + " value " + kvp.Value);
+			result += kvp.Key;
+		}
+		return result;
+
 	}
 
 	static public List<SongInfo> loadSongInfo(TextAsset songInfos) {

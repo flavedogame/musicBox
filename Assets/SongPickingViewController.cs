@@ -12,9 +12,11 @@ public class SongPickingViewController : MonoBehaviour {
 	public Text difficulty;
 	public Text highestScore;
 	public AudioSource audioSource;
+	public Text basicAttribute;
+	public Text specialAttribute;
 	// Use this for initialization
 	void Start () {
-		
+		MusicGameSongManager.Instance.SelectSong (0);
 	}
 	
 	// Update is called once per frame
@@ -28,7 +30,9 @@ public class SongPickingViewController : MonoBehaviour {
 		songDescription.text = songInfo.Description();
 		difficulty.text = songInfo.difficulty.ToString();
 		audioSource.clip = songInfo.audioClip ();
+		audioSource.time = 30;
 		audioSource.Play ();
+		basicAttribute.text = songInfo.basicAttribute ();
 	}
 
 	public void DecideSong() {
