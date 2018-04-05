@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class SongBox : MonoBehaviour {
 
 	Text songName;
-	Image songImage;
 	ListBox listBox;
 
+	public Image songImage;
 
 
 	void Start(){
@@ -17,7 +17,6 @@ public class SongBox : MonoBehaviour {
 	// Use this for initialization
 	public void SetupBox(SongInfo songInfo) {
 		songName = GetComponentInChildren<Text> ();
-		songImage = GetComponent<Image> ();
 		listBox = GetComponent<ListBox> ();
 		songName.text = songInfo.name;
 		songImage.sprite = songInfo.icon();
