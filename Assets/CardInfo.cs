@@ -13,7 +13,7 @@ public class CardInfo : MonoBehaviour {
 		public string name;
 		public string description;
 		public string character;
-	public string normalAttack;
+	public string specialAttribute;
 	public string specialAttack;
 
 	public int deep;
