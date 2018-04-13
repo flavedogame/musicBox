@@ -11,8 +11,6 @@ public class MusicGameViewController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//hacky
-		MusicGameSongManager.Instance.Start ();
 
 		Debug.Log (MusicGameSongManager.Instance.SelectedSong());
 		SongInfo songInfo = MusicGameSongManager.Instance.SelectedSong();

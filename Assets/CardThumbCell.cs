@@ -14,7 +14,8 @@ public class CardThumbCell : MonoBehaviour {
 
 	public void setup(string identifier) {
 		cardIdentifier = identifier;
-		image.sprite = CardInfoManager.Instance.cardDict [cardIdentifier].image();
+		Card card = CardManager.Instance.cardDict [cardIdentifier];
+		image.sprite = card.cardInfo.image();
 	}
 	
 	// Update is called once per frame

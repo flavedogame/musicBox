@@ -7,10 +7,8 @@ public class CardPickingViewController : MonoBehaviour {
 	public GameObject thumbCardPrefab;
 	// Use this for initialization
 	void Start () {
-		//hack
-		CardInfoManager.Instance.Start ();
 		Debug.Log ("cardList in picking" + CardInfoManager.Instance.cardDict.Keys);
-		foreach (string key in CardInfoManager.Instance.cardDict.Keys) {
+		foreach (string key in CardManager.Instance.cardDict.Keys) {
 			GameObject go = Instantiate (thumbCardPrefab) as GameObject;
 			go.GetComponent<CardThumbCell> ().setup (key);
 			go.transform.parent = cardList.transform;

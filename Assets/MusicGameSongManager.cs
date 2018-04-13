@@ -12,7 +12,7 @@ public class MusicGameSongManager : Singleton<MusicGameSongManager> {
 
 
 	// Use this for initialization
-	public void Start () {
+	public void Setup () {
 		//songs = SongInfo.loadSongInfo (songInfosText);
 		//should select the song player owns
 		songs = SongInfo.loadSongInfo("Assets/Resources/songCsv.csv");
