@@ -33,6 +33,7 @@ public class SongInfo : MonoBehaviour {
 	public int difficulty;
 
 	public string special;
+
 	//public float songSampleStartTime;
 	//public float songSampleEndTime;
 
@@ -45,6 +46,8 @@ public class SongInfo : MonoBehaviour {
 		}
 		return sprite;
 	}
+
+
 
 	public Sprite icon() {
 		string path = "songBG/" + identifier+"_i";

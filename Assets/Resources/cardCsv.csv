@@ -1,3 +1,3 @@
-﻿identifier,name,character,description,specialAttack,deep,pure,passion,funny,think,specialAttribute
-dzw_school,大张伟·学生,dzw,大家好，我是大张伟,299,1,1,1,1,1,school
-wwb_school,王文博·学生,wwb,大家好，我是王文博,299,1,1,1,1,1,school
+﻿identifier,name,character,description,specialAttack,deep,pure,passion,funny,think,specialAttribute,skills
+dzw_school,大张伟·学生,dzw,大家好，我是大张伟,300,0,50,20,10,20,校园,年轻：年轻就是不怕犯错。演奏中的失误不会增加疲劳值
+wwb_school,王文博·学生,wwb,大家好，我是王文博,299,0,50,20,30,0,校园,年轻：年轻就是不怕犯错。演奏中的失误不会增加疲劳值

@@ -22,6 +22,9 @@ public class CardInfo : MonoBehaviour {
 	public int funny;
 	public int think;
 
+
+	public string skills;
+
 	public Sprite image() {
 		string path = "cardImage/" + identifier;
 		Sprite sprite = Resources.Load<Sprite> (path);//format to be decided
@@ -40,6 +43,14 @@ public class CardInfo : MonoBehaviour {
 			Debug.LogError ("sprite not exist for path: "+path);
 		}
 		return sprite;
+	}
+
+	public string Skill() {
+		return skills;
+	}
+
+	public int[] AllAttributes() {
+		return new int[]{deep,pure,passion,funny,think};
 	}
 
 //	public AudioClip audioClip(){

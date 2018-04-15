@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CardPickingViewController : MonoBehaviour {
 	public GameObject cardList;
 	public GameObject thumbCardPrefab;
+	public GameObject cardDetailViewPrefab;
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("cardList in picking" + CardInfoManager.Instance.cardDict.Keys);
@@ -19,6 +20,9 @@ public class CardPickingViewController : MonoBehaviour {
 
 	void ClickCard(string cardIdentifier) {
 		Debug.Log ("click"+cardIdentifier);
+		GameObject cardDetailView = Instantiate (cardDetailViewPrefab,transform) as GameObject;
+		//cardDetailView.SetActive (true);
+		cardDetailView.GetComponent<CardDetailViewController> ().Setup (cardIdentifier);
 	}
 
 	
