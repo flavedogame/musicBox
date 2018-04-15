@@ -7,14 +7,30 @@ public class CardPickingViewController : MonoBehaviour {
 	public GameObject cardList;
 	public GameObject thumbCardPrefab;
 	public GameObject cardDetailViewPrefab;
+
+	public CardThumbCell[] selectedPlayingCards;
+	public CardThumbCell[] selectedHelpingCards;
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("cardList in picking" + CardInfoManager.Instance.cardDict.Keys);
-		foreach (string key in CardManager.Instance.cardDict.Keys) {
+		updateView ();
+		CardManager.Instance.CardChange += updateView;
+	}
+
+	public void updateView(){
+		Debug.Log ("update view");
+		foreach (Transform child in cardList.transform) {
+			Destroy (child.gameObject);
+		}
+
+		foreach (string key in CardManager.Instance.UseableCards()) {
 			GameObject go = Instantiate (thumbCardPrefab) as GameObject;
 			go.GetComponent<CardThumbCell> ().setup (key);
 			go.transform.parent = cardList.transform;
 			go.GetComponentInChildren<Button>().onClick.AddListener(() => ClickCard(go.GetComponent<CardThumbCell>().cardIdentifier));
+		}
+
+		for (int i = 0; i < CardManager.Instance.selectedPlayingCards.Count; i++) {
+			selectedPlayingCards [i].setup (CardManager.Instance.selectedPlayingCards [i]);
 		}
 	}
 
