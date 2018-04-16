@@ -26,7 +26,7 @@ public class MusicGameSongManager : Singleton<MusicGameSongManager> {
 
 	public void SelectSong(int index) {
 		if (index >= songs.Count) {
-			Debug.LogError ("index larger than song's count");
+			Debug.LogError ("index larger than song's count"+songs.Count);
 			return;
 		}
 		pickingView.SelectSong (songs [index]);

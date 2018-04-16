@@ -74,6 +74,24 @@ public class SongInfo : MonoBehaviour {
 
 	public enum BasicAttribute {deep,pure,passion,funny,think};
 
+	public string attributeDisplay(BasicAttribute attr) {
+		switch(attr){
+		case BasicAttribute.deep:
+			return "深情";
+		case BasicAttribute.pure:
+			return	"单纯";
+		case BasicAttribute.passion:
+			return	"热情";
+		case BasicAttribute.funny:
+			return	"幽默";
+		case BasicAttribute.think:
+			return	"思考";
+		default:
+			return "error";
+		}
+	}
+			
+
 	public string basicAttribute() {
 		Dictionary<BasicAttribute,int> basicMap = new Dictionary<BasicAttribute, int> ();
 		basicMap [BasicAttribute.deep] = deep;
@@ -83,9 +101,14 @@ public class SongInfo : MonoBehaviour {
 		basicMap [BasicAttribute.think] = think;
 		var newDict = basicMap.OrderByDescending(x => x.Value);
 		string result = "";
+		int getFirst = 2;
 		foreach (KeyValuePair<BasicAttribute, int> kvp in newDict) {
 			Debug.Log ("key " + kvp.Key + " value " + kvp.Value);
-			result += kvp.Key;
+			result += (attributeDisplay(kvp.Key) + " ");
+			getFirst--;
+			if (getFirst == 0) {
+				break;
+			}
 		}
 		return result;
 
