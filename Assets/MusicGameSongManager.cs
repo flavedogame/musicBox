@@ -7,9 +7,9 @@ public class MusicGameSongManager : Singleton<MusicGameSongManager> {
 	public TextAsset songInfosText;
 	//[HideInInspector]
 	public List<SongInfo> songs;
-	public SongPickingViewController pickingView;
 	int selectedIndex;
-
+	public delegate void Action (SongInfo songInfo);
+	public event Action SongChange; 
 
 	// Use this for initialization
 	public void Setup () {
@@ -29,7 +29,9 @@ public class MusicGameSongManager : Singleton<MusicGameSongManager> {
 			Debug.LogError ("index larger than song's count"+songs.Count);
 			return;
 		}
-		pickingView.SelectSong (songs [index]);
+		Debug.Log ("song index" + songs [index].name);
+		Debug.Log (SongChange);
+		SongChange (songs[index]);
 		selectedIndex = index;
 		Debug.Log (songs [selectedIndex].name);
 	}

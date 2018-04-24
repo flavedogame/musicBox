@@ -10,6 +10,12 @@ public class CardPickingViewController : MonoBehaviour {
 
 	public CardThumbCell[] selectedPlayingCards;
 	public CardThumbCell[] selectedHelpingCards;
+
+	//song info
+	public Text songName;
+	public Text songAttribute;
+	public Text songSpecialAttribute;
+
 	// Use this for initialization
 	void Start () {
 		updateView ();
@@ -17,7 +23,12 @@ public class CardPickingViewController : MonoBehaviour {
 	}
 
 	public void updateView(){
-		Debug.Log ("update view");
+		updateCardView ();
+		updateSongView ();
+	}
+
+	public void updateCardView() {
+		//Debug.Log ("update view");
 		foreach (Transform child in cardList.transform) {
 			Destroy (child.gameObject);
 		}
@@ -32,6 +43,14 @@ public class CardPickingViewController : MonoBehaviour {
 		for (int i = 0; i < CardManager.Instance.selectedPlayingCards.Count; i++) {
 			selectedPlayingCards [i].setup (CardManager.Instance.selectedPlayingCards [i]);
 		}
+	}
+
+	public void updateSongView() {
+		SongInfo songInfo = MusicGameSongManager.Instance.SelectedSong ();
+		Debug.Log (songInfo.name);
+		songName.text = songInfo.name;
+		songAttribute.text = songInfo.basicAttribute ();
+		songSpecialAttribute.text = songInfo.special;
 	}
 
 	void ClickCard(string cardIdentifier) {

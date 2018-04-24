@@ -18,8 +18,10 @@ public class SongPickingViewController : MonoBehaviour {
 	public Button finishSelectionButton;
 	// Use this for initialization
 	void Start () {
+		MusicGameSongManager.Instance.SongChange += SelectSong;
 		MusicGameSongManager.Instance.SelectSong (0);
 		finishSelectionButton.onClick.AddListener(() => DecideSong());
+		Debug.Log ("add action" );
 	}
 	
 	// Update is called once per frame
@@ -39,6 +41,7 @@ public class SongPickingViewController : MonoBehaviour {
 	}
 
 	public void DecideSong() {
+		Debug.Log ("switch scene");
 		SceneManager.LoadScene ("card picking");
 	}
 }
