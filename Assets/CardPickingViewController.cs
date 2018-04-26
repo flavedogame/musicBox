@@ -77,4 +77,10 @@ public class CardPickingViewController : MonoBehaviour {
 		Debug.Log ("switch scene");
 		SceneManager.LoadScene ("music game");
 	}
+
+	void OnDestroy(){
+		CardManager.Instance.CardChange -= updateView;
+		backButton.onClick.RemoveAllListeners ();
+		nextButton.onClick.RemoveAllListeners ();
+	}
 }

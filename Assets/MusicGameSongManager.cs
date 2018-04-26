@@ -38,13 +38,6 @@ public class MusicGameSongManager : Singleton<MusicGameSongManager> {
 	}
 
 	public SongInfo SelectedSong(){
-		Debug.Log (selectedIndex);
-		foreach (string test2 in songDict.Keys) {
-			Debug.Log (test2);
-			Debug.Log (songDict [test2].songInfo);
-		}
-
-		string test = CardManager.Instance.cardList [0];
 		return songDict[songNames[selectedIndex]].songInfo;
 	}
 

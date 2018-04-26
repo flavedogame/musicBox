@@ -31,19 +31,24 @@ public class SongPickingViewController : MonoBehaviour {
 
 	public void SelectSong(Song song) {
 		SongInfo songInfo = song.songInfo;
-		//background.sprite = songInfo.image();
-		//songName.text = songInfo.name;
-		//songDescription.text = songInfo.Description();
+		Debug.Log (songInfo.image ());
+		background.sprite = songInfo.image();
+		songName.text = songInfo.name;
+		songDescription.text = songInfo.Description();
 		//difficulty.text = songInfo.difficulty.ToString();
-		//audioSource.clip = songInfo.audioClip ();
-		//audioSource.time = 30;
-		//audioSource.Play ();
-		//basicAttribute.text = songInfo.basicAttribute ();
-		songName.text = "???";
+		audioSource.clip = songInfo.audioClip ();
+		audioSource.time = 30;
+		audioSource.Play ();
+		basicAttribute.text = songInfo.basicAttribute ();
 	}
 
 	public void DecideSong() {
 		Debug.Log ("switch scene");
 		SceneManager.LoadScene ("card picking");
+	}
+
+	void OnDestroy(){
+		MusicGameSongManager.Instance.SongChange -= SelectSong;
+		finishSelectionButton.onClick.RemoveAllListeners ();
 	}
 }
