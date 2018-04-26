@@ -5,14 +5,13 @@ using UnityEngine;
 public class songListViewController : MonoBehaviour {
 
 	public GameObject songBoxPrefab;
-	public MusicGameSongManager songManager;
 
 	// Use this for initialization
 	void Start () {
 		ListBox lastBoxScript = null;
 		ListBox firstBoxScript = null;
-		for (int i = 0; i < songManager.songs.Count; i++) {
-			SongInfo songInfo = songManager.songs [i];
+		for (int i = 0; i < MusicGameSongManager.Instance.songNames.Count; i++) {
+			SongInfo songInfo = MusicGameSongManager.Instance.songDict[MusicGameSongManager.Instance.songNames [i]].songInfo;
 			GameObject songBox = Instantiate (songBoxPrefab,transform) as GameObject;
 			songBox.name = songInfo.identifier;
 			songBox.transform.parent = transform;

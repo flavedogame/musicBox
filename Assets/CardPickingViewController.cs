@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CardPickingViewController : MonoBehaviour {
 	public GameObject cardList;
@@ -16,10 +17,16 @@ public class CardPickingViewController : MonoBehaviour {
 	public Text songAttribute;
 	public Text songSpecialAttribute;
 
+	public Button backButton;
+	public Button cancelButton;
+	public Button nextButton;
+
 	// Use this for initialization
 	void Start () {
 		updateView ();
 		CardManager.Instance.CardChange += updateView;
+		backButton.onClick.AddListener(() => Back());
+		nextButton.onClick.AddListener(() => DecideCards());
 	}
 
 	public void updateView(){
@@ -60,9 +67,14 @@ public class CardPickingViewController : MonoBehaviour {
 		cardDetailView.GetComponent<CardDetailViewController> ().Setup (cardIdentifier);
 	}
 
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void Back(){
+			Debug.Log ("switch scene");
+			SceneManager.LoadScene ("song picking");
+
+	}
+
+	public void DecideCards() {
+		Debug.Log ("switch scene");
+		SceneManager.LoadScene ("music game");
 	}
 }

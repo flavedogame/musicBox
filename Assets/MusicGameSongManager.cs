@@ -6,41 +6,46 @@ public class MusicGameSongManager : Singleton<MusicGameSongManager> {
 
 	public TextAsset songInfosText;
 	//[HideInInspector]
-	public List<SongInfo> songs;
+	public List<string> songNames;
 	int selectedIndex;
-	public delegate void Action (SongInfo songInfo);
+	public delegate void Action (Song song);
 	public event Action SongChange; 
+	public Dictionary<string,Song> songDict;
+
 
 	// Use this for initialization
 	public void Setup () {
 		//songs = SongInfo.loadSongInfo (songInfosText);
 		//should select the song player owns
-		songs = SongInfo.loadSongInfo("Assets/Resources/songCsv.csv");
-		//SelectSong (0);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		songNames = new List<string> ();
+		songDict = new Dictionary<string,Song> ();
+		foreach (string key in SongInfoManager.Instance.songDict.Keys) {
+			Song song = new Song (key, 1);
+			songDict [key] = song;
+			songNames.Add (key);
+		}
 	}
 
 	public void SelectSong(int index) {
-		if (index >= songs.Count) {
-			Debug.LogError ("index larger than song's count"+songs.Count);
+		if (index >= songNames.Count) {
+			Debug.LogError ("index larger than song's count"+songNames.Count);
 			return;
 		}
-		Debug.Log ("song index" + songs [index].name);
-		Debug.Log (SongChange);
-		SongChange (songs[index]);
+		SongChange (songDict[songNames[index]]);
 		selectedIndex = index;
-		Debug.Log (songs [selectedIndex].name);
+
+		string test = CardManager.Instance.cardList [0];
 	}
 
 	public SongInfo SelectedSong(){
-		Debug.Log (songs.Count);
 		Debug.Log (selectedIndex);
-		Debug.Log (songs [selectedIndex].name);
-		return songs [selectedIndex];
+		foreach (string test2 in songDict.Keys) {
+			Debug.Log (test2);
+			Debug.Log (songDict [test2].songInfo);
+		}
+
+		string test = CardManager.Instance.cardList [0];
+		return songDict[songNames[selectedIndex]].songInfo;
 	}
 
 	public int[] GetScores() {

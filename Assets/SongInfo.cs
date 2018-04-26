@@ -8,6 +8,7 @@ using System.Text;
 using System.Collections.Generic;
 using Sinbad;
 
+[System.Serializable]
 public class SongInfo : MonoBehaviour {
 		public string identifier;
 		public string name;

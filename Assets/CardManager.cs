@@ -6,7 +6,7 @@ using System;
 public class CardManager : Singleton<CardManager> {
 
 	public Dictionary<string,Card> cardDict;
-	List<string> cardList;
+	public List<string> cardList;
 
 	public List<string> selectedPlayingCards;
 	public List<string> selectedHelpingCards;
@@ -26,6 +26,7 @@ public class CardManager : Singleton<CardManager> {
 		selectedHelpingCards = new List<string> ();
 		foreach (string key in CardInfoManager.Instance.cardDict.Keys) {
 			Card card = new Card (key, 1);
+			Debug.Log ("ccc" + card.cardInfo);
 			cardDict [key] = card;
 			cardList.Add (key);
 		}

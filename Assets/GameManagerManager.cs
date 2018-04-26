@@ -9,6 +9,7 @@ public class GameManagerManager : Singleton<CardInfoManager> {
 		Debug.Log ("start game manager");
 		CardInfoManager.Instance.Setup ();
 		CardManager.Instance.Setup ();
+		SongInfoManager.Instance.Setup ();
 		MusicGameSongManager.Instance.Setup ();
 	}
 	

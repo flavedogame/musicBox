@@ -1571,7 +1571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songBoxPrefab: {fileID: 1181083381522074, guid: 95a419ce6bf32b54eabb1e7d72d3b149,
     type: 2}
-  songManager: {fileID: 1229680864}
+  songManager: {fileID: 0}
 --- !u!1 &1205250353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1786,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1229680866}
   - component: {fileID: 1229680865}
-  - component: {fileID: 1229680864}
   - component: {fileID: 1229680863}
   - component: {fileID: 1229680867}
   m_Layer: 0
@@ -1813,20 +1812,6 @@ MonoBehaviour:
   comboCount: 0
   maxComboCount: 10
   score: 23.56
---- !u!114 &1229680864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1229680862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d3f9b1482cb7e45b10a401408bd233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songInfosText: {fileID: 4900000, guid: 70f4dd2a09be2794ca18bfa753a1f1c2, type: 3}
-  songs: []
-  pickingView: {fileID: 1112495438}
 --- !u!114 &1229680865
 MonoBehaviour:
   m_ObjectHideFlags: 0

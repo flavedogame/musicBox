@@ -1296,7 +1296,7 @@ Prefab:
         type: 3}
     - target: {fileID: 1289937228154518, guid: 6a65999dec52de744b859d817a8b11fe, type: 2}
       propertyPath: m_Name
-      value: exitButton (1)
+      value: backButton
       objectReference: {fileID: 0}
     - target: {fileID: 114108139357107356, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
@@ -1311,6 +1311,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
     type: 2}
   m_PrefabInternal: {fileID: 465559543}
+--- !u!114 &465559545 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000209041048850, guid: 6a65999dec52de744b859d817a8b11fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 465559543}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &465714306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,7 +2636,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1033058676}
   - component: {fileID: 1033058675}
-  - component: {fileID: 1033058674}
   - component: {fileID: 1033058673}
   - component: {fileID: 1033058677}
   - component: {fileID: 1033058678}
@@ -2658,19 +2663,6 @@ MonoBehaviour:
   comboCount: 0
   maxComboCount: 10
   score: 23.56
---- !u!114 &1033058674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1033058672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d3f9b1482cb7e45b10a401408bd233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songInfosText: {fileID: 4900000, guid: 70f4dd2a09be2794ca18bfa753a1f1c2, type: 3}
-  songs: []
 --- !u!114 &1033058675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2706,6 +2698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bfdeb26ad9c62418944a6056952fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardList: []
   selectedPlayingCards: []
   selectedHelpingCards: []
 --- !u!114 &1033058678
@@ -3120,6 +3113,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
     type: 2}
   m_PrefabInternal: {fileID: 1303841436}
+--- !u!114 &1303841438 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000209041048850, guid: 6a65999dec52de744b859d817a8b11fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 1303841436}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1444093295
 Prefab:
   m_ObjectHideFlags: 0
@@ -3224,6 +3223,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22470964, guid: dc637e21402e1484aba5bd886d2c67d2,
     type: 2}
   m_PrefabInternal: {fileID: 1444093295}
+--- !u!114 &1444093297 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11432616, guid: dc637e21402e1484aba5bd886d2c67d2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1444093295}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &1452877724 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114723689737775638, guid: fcf559aad6979124e956ca0165385bf2,
@@ -4153,6 +4158,9 @@ MonoBehaviour:
   songName: {fileID: 1524758762}
   songAttribute: {fileID: 1294744912}
   songSpecialAttribute: {fileID: 744734227}
+  backButton: {fileID: 465559545}
+  cancelButton: {fileID: 1303841438}
+  nextButton: {fileID: 1444093297}
 --- !u!1 &1980463287
 GameObject:
   m_ObjectHideFlags: 0

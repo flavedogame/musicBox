@@ -29,15 +29,17 @@ public class SongPickingViewController : MonoBehaviour {
 		
 	}
 
-	public void SelectSong(SongInfo songInfo) {
-		background.sprite = songInfo.image();
-		songName.text = songInfo.name;
-		songDescription.text = songInfo.Description();
+	public void SelectSong(Song song) {
+		SongInfo songInfo = song.songInfo;
+		//background.sprite = songInfo.image();
+		//songName.text = songInfo.name;
+		//songDescription.text = songInfo.Description();
 		//difficulty.text = songInfo.difficulty.ToString();
-		audioSource.clip = songInfo.audioClip ();
-		audioSource.time = 30;
-		audioSource.Play ();
-		basicAttribute.text = songInfo.basicAttribute ();
+		//audioSource.clip = songInfo.audioClip ();
+		//audioSource.time = 30;
+		//audioSource.Play ();
+		//basicAttribute.text = songInfo.basicAttribute ();
+		songName.text = "???";
 	}
 
 	public void DecideSong() {

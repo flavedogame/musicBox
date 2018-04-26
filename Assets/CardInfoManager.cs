@@ -15,9 +15,4 @@ public class CardInfoManager : Singleton<CardInfoManager> {
 			cardDict [info.identifier] = info;
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
