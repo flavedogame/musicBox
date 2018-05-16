@@ -1,0 +1,2 @@
+identifier,name,displayName,attribute,specialAttribute,enemy,scores,preRequisite,reward,finishAchievement
+level1,初识郭阳,王文博说乐队需要一个贝斯手，刚好他认识一个，来切磋一下,pure,school,guoyang_bludger,50|100,,50:{card:gy_bludger},50:finishLevel1

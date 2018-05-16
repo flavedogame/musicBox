@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManagerManager : Singleton<CardInfoManager> {
+public class GameManagerManager : Singleton<GameManagerManager> {
 
 	// Use this for initialization
 	void Awake () {
@@ -11,6 +11,8 @@ public class GameManagerManager : Singleton<CardInfoManager> {
 		CardManager.Instance.Setup ();
 		SongInfoManager.Instance.Setup ();
 		MusicGameSongManager.Instance.Setup ();
+		InfoManager.Instance.SetupGameLevel ();
+		GameLevelManager.Instance.Setup ();
 	}
 	
 	// Update is called once per frame

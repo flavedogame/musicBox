@@ -15,6 +15,12 @@ public class SongPickingViewController : MonoBehaviour {
 	public Text basicAttribute;
 	public Text specialAttribute;
 
+	//level info
+	public Text levelName;
+	public Text levelDesc;
+	public Text levelAttribute;
+	public Text levelSpecialAttribute;
+
 	public Button finishSelectionButton;
 	// Use this for initialization
 	void Start () {
@@ -22,6 +28,15 @@ public class SongPickingViewController : MonoBehaviour {
 		MusicGameSongManager.Instance.SelectSong (0);
 		finishSelectionButton.onClick.AddListener(() => DecideSong());
 		Debug.Log ("add action" );
+		setupLevel ();
+	}
+
+	void setupLevel(){
+		GameLevelInfo levelInfo = GameLevelManager.Instance.CurrentLevelInfo ();
+		levelName.text = levelInfo.name;
+		levelDesc.text = levelInfo.displayName;
+		levelAttribute.text = levelInfo.attribute;
+		levelSpecialAttribute.text = levelInfo.specialAttribute;
 	}
 	
 	// Update is called once per frame
