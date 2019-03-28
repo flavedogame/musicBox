@@ -9,6 +9,6 @@ public class InfoManager : Singleton<InfoManager> {
 
 	// Use this for initialization
 	public  void SetupGameLevel () {
-		levelList = CsvUtil.LoadObjects<GameLevelInfo> ("Assets/Resources/levelCsv.csv");
+		levelList = CsvUtil.LoadObjects<GameLevelInfo> ("levelCsv.csv");
 	}
 }

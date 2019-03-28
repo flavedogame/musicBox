@@ -8,7 +8,7 @@ public class SongInfoManager : Singleton<SongInfoManager> {
 	public Dictionary<string,SongInfo> songDict;
 	// Use this for initialization
 	public  void Setup () {
-		List<SongInfo> songList = CsvUtil.LoadObjects<SongInfo> ("Assets/Resources/songCsv.csv");
+		List<SongInfo> songList = CsvUtil.LoadObjects<SongInfo> ("songCsv.csv");
 		//Debug.Log ("start card info Manager");
 		songDict = new Dictionary<string, SongInfo> ();
 		foreach (SongInfo info in songList) {

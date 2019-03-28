@@ -709,7 +709,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 565, y: 274}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439839825
 MonoBehaviour:
@@ -1431,6 +1431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songInfosText: {fileID: 0}
+  songNames: []
 --- !u!114 &1082928709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,10 +1782,10 @@ RectTransform:
   m_Father: {fileID: 1181646452}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1491070185 stripped
 GameObject:
@@ -1824,7 +1825,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 565, y: 274}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558300993
 MonoBehaviour:
@@ -1909,12 +1910,12 @@ Prefab:
     - target: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 301
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 161
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
@@ -1929,22 +1930,22 @@ Prefab:
     - target: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224239935105168594, guid: 6a65999dec52de744b859d817a8b11fe,
         type: 2}
